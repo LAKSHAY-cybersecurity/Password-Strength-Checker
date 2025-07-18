@@ -91,4 +91,4 @@ This project runs **completely in the browser**, no server or database needed.
 
 ## 🙌 Author
 
-Made by **Lakshay Talwar**
+Made by **Lakshay**
