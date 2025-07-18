@@ -1,0 +1,380 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #0f0c29);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    margin: 0;
+    padding: 2rem;
+    cursor: none;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 650px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.section:nth-of-type(2) {
+    animation-delay: 0.4s;
+}
+
+.section:nth-of-type(3) {
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    margin-top: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    color: #000000;
+}
+
+input:focus {
+    box-shadow: 0 0 15px rgba(46, 196, 182, 0.7);
+    transform: scale(1.02);
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background: #2ec4b6;
+    color: #0f0c29;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #23a393;
+}
+
+.result {
+    margin-top: 1rem;
+    word-break: break-all;
+}
+
+.strength {
+    font-weight: bold;
+    transition: color 0.5s ease;
+}
+
+.weak {
+    color: #ff4b5c;
+}
+
+.medium {
+    color: #ffba08;
+}
+
+.strong {
+    color: #2ec4b6;
+}
+
+.icon {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: #2e9ac4;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 0 8px rgba(46, 176, 196, 0.6);
+}
+
+.steps-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 4rem;
+    gap: 2rem;
+}
+
+.pin {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.red {
+    background: #ff4b5c;
+}
+
+.orange {
+    background: #ff7f50;
+}
+
+.yellow {
+    background: #ffba08;
+}
+
+.green {
+    background: #2ec4b6;
+}
+
+.blue {
+    background: #3a86ff;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.08);
+    /* subtle dark glass */
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    width: 250px;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.step-card:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.step-card p {
+    color: #eee;
+    font-size: 0.95rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.step-card:hover p {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.step-title {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.step-number {
+    color: #ccc;
+}
+
+.top-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    gap: 0.5rem;
+}
+
+.logo svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+    transition: fill 0.3s;
+}
+
+.logo:hover svg {
+    fill: #2ec4b6;
+}
+
+.quote-banner {
+    text-align: center;
+    padding: 1rem 2rem;
+    margin-top: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.copy-icon {
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+    color: #2ec4b6;
+    transition: color 0.3s ease;
+}
+
+.copy-icon:hover {
+    color: #23a393;
+}
+
+.copy-button {
+    background: transparent;
+    border: none;
+    color: #2ec4b6;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 10px;
+    background: #fff;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+.input-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.eye-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye-toggle:focus {
+    outline: 2px solid #2ec4b6;
+    border-radius: 6px;
+}
+
+.copy-button:hover {
+    color: #23a393;
+}
+
+.tip-header {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 2rem auto;
+    background: linear-gradient(90deg, #2ec4b6, #ffba08);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.steps-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 1.5rem;
+    width: 300px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+@media screen and (max-width: 768px) {
+    .steps-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-card {
+        width: 90%;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+}
